@@ -73,4 +73,9 @@ kubectl create -f ./examples/capacitor-ocirepository.yaml
 # create Kustomization
 kubectl create -f ./examples/kustomization-ocirepository.yaml
 
+# create port forwarding
+kubectl port-forward -n flux-system svc/capacitor 9000:9000
+
 ```
+
+Open, in your webbrowser, localhost:9000 ...
