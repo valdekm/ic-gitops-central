@@ -25,6 +25,8 @@ Provides a common interface for artifacts acquisition (delivered as API endpoint
 
 From Flux v2.7.0 can be extended with [Source Watcher](https://fluxcd.io/flux/components/source/#source-watcher).
 
+Usually (if not awalys) authentication with credentials is supported, respirce refresh intervals can be adjusted, minimal refresh interval is 1 minute.
+
 ### Kustomize Controller
 
 Manages infrastructure and workloads defined with Kubernetes manifests and assembled with Kustomize.
