@@ -46,3 +46,31 @@ Notifies toolkig controllers about source changes, can send events to external s
 Scans image reopsitories and reflects image metadata in Kubernetes sources.
 Image Automation Controller updates yaml files based on the latest images scanned and commits the changes to a given Git repository.
 E.g. one can define a policy, for an image repository, to define version range.
+
+## Examples
+
+### sample Helm release
+
+```shell
+# create HelmRepository resource to be later used by helm release
+kubectl create -f ./examples/podinfo-helmrepository.yaml
+
+# create HelmRelease
+kubectl create -f ./examples/podinfo-helmrelease-v4.yaml
+
+# upgrade HelmRelease (there's some error and helm is upgraded but ends up with error)
+kubectl apply -f ./examples/podinfo-helmrelease-v5.yaml
+```
+
+### OCIRepository and Kustomization sample
+
+It will also deploy some basic UI for Flux as Flux itself doesn't provide it on it's own (ArgoCD does):
+
+```shell
+# create OCIRegistry
+kubectl create -f ./examples/capacitor-ocirepository.yaml
+
+# create Kustomization
+kubectl create -f ./examples/kustomization-ocirepository.yaml
+
+```
